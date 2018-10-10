@@ -1,0 +1,784 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>
+
+A51Basic リファレンスマニュアル
+        
+        </title>
+        <meta name="title" content="
+Abiword HTML Document
+        ">
+        <meta name="author" content="root">
+        <style type="text/css">
+<!-- #toc,
+.toc,
+.mw-warning {
+	border: 1px solid #aaa;
+	background-color: #f9f9f9;
+	padding: 5px;
+	font-size: 95%;
+}
+#toc h2,
+.toc h2 {
+	display: inline;
+	border: none;
+	padding: 0;
+	font-size: 100%;
+	font-weight: bold;
+}
+#toc #toctitle,
+.toc #toctitle,
+#toc .toctitle,
+.toc .toctitle {
+	text-align: center;
+}
+#toc ul,
+.toc ul {
+	list-style-type: none;
+	list-style-image: none;
+	margin-left: 0;
+	padding-left: 0;
+	text-align: left;
+}
+#toc ul ul,
+.toc ul ul {
+	margin: 0 0 0 2em;
+}
+#toc .toctoggle,
+.toc .toctoggle {
+	font-size: 94%;
+}p, h1, h2, h3, li {
+	color:#000000;
+	font-family:'TakaoEx明朝';
+	font-size:12pt;
+	text-align:left;
+	vertical-align:normal;
+}
+body{
+padding-top : 1in;
+padding-bottom : 1in;
+padding-left : 1in;
+padding-right : 1in;
+font-family:'TakaoEx明朝';
+color:#000000;
+widows:2;
+font-style:normal;
+text-indent:0in;
+font-variant:normal;
+font-weight:normal;
+font-size:12pt;
+text-decoration:none;
+text-align:left;
+} -->
+        </style>
+
+    </head>
+<body>        <div>
+            <p class="" style="text-align:left">
+<span style="font-weight:bold;font-size:16pt">A51Basicリファレンスマニュアル</span>
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+■実行
+            </p>
+            <p class="" style="text-align:left">
+Javaをインストールした状態でコマンドラインから以下のコマンドをタイプするとBasicが起動します。
+            </p>
+            <p class="" style="text-align:left">
+java -jar A51Basic.jar
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+■使用できるBASICコマンド、関数
+            </p>
+            <p class="" style="text-align:left">
+(1) ラベル
+            </p>
+            <p class="" style="text-align:left">
+ラベルはgoto文やgosub文の飛び先を指定するために用いられます。
+            </p>
+            <p class="" style="text-align:left">
+ラベルは先頭に"@"をつけた任意の英数字で表現されます
+            </p>
+            <p class="" style="text-align:left">
+&lt;例&gt;
+            </p>
+            <p class="" style="text-align:left">
+@loop1:
+            </p>
+            <p class="" style="text-align:left">
+@exit2:
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+※１行に2つ以上のラベルを記述すると最初のラベルしか認識されないので注意すること
+            </p>
+            <p class="" style="text-align:left">
+コマンド(キーワードは英数小文字でしか受け付けません)
+            </p>
+            <p class="" style="text-align:left">
+・new
+            </p>
+            <p class="" style="text-align:left">
+・end
+            </p>
+            <p class="" style="text-align:left">
+・list
+            </p>
+            <p class="" style="text-align:left">
+・load
+            </p>
+            <p class="" style="text-align:left">
+・save
+            </p>
+            <p class="" style="text-align:left">
+・run
+            </p>
+            <p class="" style="text-align:left">
+・edit
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+編集が終わって、編集画面から実行画面に戻るには”Stop”ボタンを押します。
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+・bye
+            </p>
+            <p class="" style="text-align:left">
+BASICを終了してOSに復帰する
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+・ print
+            </p>
+            <p class="" style="text-align:left">
+・ print #
+            </p>
+            <p class="" style="text-align:left">
+ファイルやネットワークにデータを出力する
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+・ input
+            </p>
+            <p class="" style="text-align:left">
+・ input #
+            </p>
+            <p class="" style="text-align:left">
+ファイルから変数にデータを入力する
+            </p>
+            <p class="" style="text-align:left">
+(ネットワークでの利用は不可、input$またはrecv関数を使うこと)
+            </p>
+            <p class="" style="text-align:left">
+・ goto
+            </p>
+            <p class="" style="text-align:left">
+&lt;例&gt;
+            </p>
+            <p class="" style="text-align:left">
+goto @loop1
+            </p>
+            <p class="" style="text-align:left">
+・ for
+            </p>
+            <p class="" style="text-align:left">
+・ next
+            </p>
+            <p class="" style="text-align:left">
+・ gosub
+            </p>
+            <p class="" style="text-align:left">
+&lt;例&gt;
+            </p>
+            <p class="" style="text-align:left">
+gosub @sub1
+            </p>
+            <p class="" style="text-align:left">
+・ return
+            </p>
+            <p class="" style="text-align:left">
+・ if
+            </p>
+            <p class="" style="text-align:left">
+&lt;例&gt;
+            </p>
+            <p class="" style="text-align:left">
+if a&gt;0 then print a
+            </p>
+            <p class="" style="text-align:left">
+if a&lt;0 then @label1
+            </p>
+            <p class="" style="text-align:left">
+if a=1 then print a else @label2
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+・ dim
+            </p>
+            <p class="" style="text-align:left">
+・ open
+            </p>
+            <p class="" style="text-align:left">
+ファイルやネットワークを開く
+            </p>
+            <p class="" style="text-align:left">
+名前の先頭に"net:"を付けるとクライアントとしてネットワークに接続することができます
+            </p>
+            <p class="" style="text-align:left">
+また先頭に"server:"を付けるとサーバーとしてネットワークに接続することができます
+            </p>
+            <p class="" style="text-align:left">
+"ホスト名:"の後に数値をつけるとポートを指定することができます。
+            </p>
+            <p class="" style="text-align:left">
+(ポート番号を省略すると80番のポートが割り当てられます)
+            </p>
+            <p class="" style="text-align:left">
+&lt;例&gt;
+            </p>
+            <p class="" style="text-align:left">
+open "file1" for input as #1 'ファイル"file1"を入力モードで開く
+            </p>
+            <p class="" style="text-align:left">
+open "net:www.google.co.jp" as #2 'ホスト"www.google.co.jp"の80番のポートに接続する
+            </p>
+            <p class="" style="text-align:left">
+open "net:192.168.12.34:5000" as #3 'ホスト"192.168.12.34"の5000番のポートに接続する
+            </p>
+            <p class="" style="text-align:left">
+open "server:1000" as #4 'サーバーとして1000番のポートを開いてクライアントの接続を待つ
+            </p>
+            <p class="" style="text-align:left">
+・ close
+            </p>
+            <p class="" style="text-align:left">
+ファイルやネットワークを閉じる
+            </p>
+            <p class="" style="text-align:left">
+&lt;例&gt;
+            </p>
+            <p class="" style="text-align:left">
+close #1
+            </p>
+            <p class="" style="text-align:left">
+close
+            </p>
+            <p class="" style="text-align:left">
+・ clear
+            </p>
+            <p class="" style="text-align:left">
+・ cls
+            </p>
+            <p class="" style="text-align:left">
+・ locate
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+・ pset( x , y ), c
+            </p>
+            <p class="" style="text-align:left">
+座標(x, y)に点を打つ
+            </p>
+            <p class="" style="text-align:left">
+cは色コードで0が白で1が黒
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+・ line(x1, y1)-(x2, y2), c
+            </p>
+            <p class="" style="text-align:left">
+座標(x1,y1)、(x2,y2)間に線を引く、ｃは色コード
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+・ box(x1,y1)-(x2,y2), c
+            </p>
+            <p class="" style="text-align:left">
+座標(x1,y1)、(x2,y2)を対角とした長方形を描く
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+・ boxf(x1, y1)-(x2, y2),c
+            </p>
+            <p class="" style="text-align:left">
+座標(x1,y1)、(x2,y2)を対角とした塗りつぶした長方形を描く
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+・ circle(x1, y1)-(x2,y2),c
+            </p>
+            <p class="" style="text-align:left">
+box(x1,y1)-(x2,y2), cで描かれる長方形に内接する楕円を描く
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+・ circlef(x1, y1)-(x2,y2),c
+            </p>
+            <p class="" style="text-align:left">
+box(x1,y1)-(x2,y2), cで描かれる長方形に内接する塗りつぶした楕円を描く
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+・ start "ファイル名","パラメータ"
+            </p>
+            <p class="" style="text-align:left">
+(パラメータは省略可能)
+            </p>
+            <p class="" style="text-align:left">
+ファイル名で指定されるファイルをWindowsアプリケーションで起動する
+            </p>
+            <p class="" style="text-align:left">
+すなわちテキストファイルの場合にはテキストエディタが立ちあがり
+            </p>
+            <p class="" style="text-align:left">
+WAVEファイルの場合には音を鳴らす
+            </p>
+            <p class="" style="text-align:left">
+startコマンドは起動したプロセスの終了待ちをおこなわない
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+・ image(x, y),"画像ファイル名"
+            </p>
+            <p class="" style="text-align:left">
+座標(x, y)に画像※を表示する
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+JPEG,PNGなどの様々な画像フォーマットに対応しています。
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+・ exec "ファイル名","パラメータ"
+            </p>
+            <p class="" style="text-align:left">
+(パラメータは省略可能)
+            </p>
+            <p class="" style="text-align:left">
+ファイル名で指定されるファイルをWindowsアプリケーションで起動する
+            </p>
+            <p class="" style="text-align:left">
+execコマンドはプログラムの実行を一時停止して、起動したプロセスの終了待ちをおこなう
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+・ wait x
+            </p>
+            <p class="" style="text-align:left">
+x(ミリ秒)プログラムを一時停止させる
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+(3) 関数(関数名は英数小文字でしか受け付けません)
+            </p>
+            <p class="" style="text-align:left">
+・ abs
+            </p>
+            <p class="" style="text-align:left">
+・ sqr
+            </p>
+            <p class="" style="text-align:left">
+・ exp
+            </p>
+            <p class="" style="text-align:left">
+・ log
+            </p>
+            <p class="" style="text-align:left">
+・ sin
+            </p>
+            <p class="" style="text-align:left">
+・ cos
+            </p>
+            <p class="" style="text-align:left">
+・ tan
+            </p>
+            <p class="" style="text-align:left">
+・ atn
+            </p>
+            <p class="" style="text-align:left">
+・ chr$
+            </p>
+            <p class="" style="text-align:left">
+・ asc
+            </p>
+            <p class="" style="text-align:left">
+・ mid$
+            </p>
+            <p class="" style="text-align:left">
+・ left$
+            </p>
+            <p class="" style="text-align:left">
+・ right$
+            </p>
+            <p class="" style="text-align:left">
+・ input$
+            </p>
+            <p class="" style="text-align:left">
+ファイルやネットワークから指定文字数の文字列を受けとる
+            </p>
+            <p class="" style="text-align:left">
+&lt;例&gt;
+            </p>
+            <p class="" style="text-align:left">
+a$=input$(1,2)
+            </p>
+            <p class="" style="text-align:left">
+※ネットワーク入力の場合、入力がない場合は入力待ちせずにヌル文字列""を返します。
+            </p>
+            <p class="" style="text-align:left">
+またエラーが発生した場合もヌル文字列を返します。
+            </p>
+            <p class="" style="text-align:left">
+どのような要因でヌル文字列が返ったかを調べるときは後述のeof関数を使います。
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+※具体的な使用法はサンプルプログラム"telnet-client.bas"を参照してください
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+・ inkey$
+            </p>
+            <p class="" style="text-align:left">
+リアルタイムでのキー入力を得る
+            </p>
+            <p class="" style="text-align:left">
+&lt;例&gt;
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+a$=inkey$
+            </p>
+            <p class="" style="text-align:left">
+print inkey$
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+・ eof
+            </p>
+            <p class="" style="text-align:left">
+ファイルの場合はファイルの終わりを返す関数
+            </p>
+            <p class="" style="text-align:left">
+0 ファイルの終わりではない
+            </p>
+            <p class="" style="text-align:left">
+1 ファイルの終わり
+            </p>
+            <p class="" style="text-align:left">
+&lt;例&gt;
+            </p>
+            <p class="" style="text-align:left">
+if eof(1) then @exit 'ファイルの終わりなら終了
+            </p>
+            <p class="" style="text-align:left">
+input #1,a$
+            </p>
+            <p class="" style="text-align:left">
+ネットワークの場合は入力以下の数値で入力の状態を返す。
+            </p>
+            <p class="" style="text-align:left">
+-1 エラーが発生した
+            </p>
+            <p class="" style="text-align:left">
+0 正常(0x00を受信した)
+            </p>
+            <p class="" style="text-align:left">
+1 切断された
+            </p>
+            <p class="" style="text-align:left">
+2 入力待ち
+            </p>
+            <p class="" style="text-align:left">
+&lt;例&gt;
+            </p>
+            <p class="" style="text-align:left">
+@loop:
+            </p>
+            <p class="" style="text-align:left">
+a$=input$(1,1)
+            </p>
+            <p class="" style="text-align:left">
+if a$&lt;&gt;"" then print a$;:goto @loop
+            </p>
+            <p class="" style="text-align:left">
+state = eof(1)
+            </p>
+            <p class="" style="text-align:left">
+if state=1 then @exit ' 切断された場合
+            </p>
+            <p class="" style="text-align:left">
+if state=-1 then @error ' エラーが発生下葉愛
+            </p>
+            <p class="" style="text-align:left">
+if state=2 then @loop ' 入力待ちの場合
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+・ str$
+            </p>
+            <p class="" style="text-align:left">
+・ val
+            </p>
+            <p class="" style="text-align:left">
+・ len
+            </p>
+            <p class="" style="text-align:left">
+・ time$
+            </p>
+            <p class="" style="text-align:left">
+・ date$
+            </p>
+            <p class="" style="text-align:left">
+・ instr
+            </p>
+            <p class="" style="text-align:left">
+・ rnd
+            </p>
+            <p class="" style="text-align:left">
+&lt;例&gt;
+            </p>
+            <p class="" style="text-align:left">
+a=rnd(n)
+            </p>
+            <p class="" style="text-align:left">
+0からnまでの範囲の乱数を発生させる
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+・ netstat
+            </p>
+            <p class="" style="text-align:left">
+0のときはネットワークは使用可能
+            </p>
+            <p class="" style="text-align:left">
+0以外のときはネットワークは使用不可
+            </p>
+            <p class="" style="text-align:left">
+&lt;例&gt;
+            </p>
+            <p class="" style="text-align:left">
+a=netstat
+            </p>
+            <p class="" style="text-align:left">
+print netstat
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+・ send ファイル番号, 送信コード
+            </p>
+            <p class="" style="text-align:left">
+指定されたファイルディスクリプタ経由で1バイト送信する
+            </p>
+            <p class="" style="text-align:left">
+&lt;例&gt;
+            </p>
+            <p class="" style="text-align:left">
+open “net:12.34.56.78:90” as #1
+            </p>
+            <p class="" style="text-align:left">
+send 1, 32 ' 空白(スペース)を送信
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+・ recv ファイル番号
+            </p>
+            <p class="" style="text-align:left">
+指定されたファイルディスクリプタ経由で1バイト受信する
+            </p>
+            <p class="" style="text-align:left">
+(戻り値は受信したバイトコード)
+            </p>
+            <p class="" style="text-align:left">
+&lt;例&gt;
+            </p>
+            <p class="" style="text-align:left">
+open “net:12.34.56.78:90” as #2
+            </p>
+            <p class="" style="text-align:left">
+a=recv(2)
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+(4) 変数
+            </p>
+            <p class="" style="text-align:left">
+変数の型は数値(実数)型と文字列型だけです。
+            </p>
+            <p class="" style="text-align:left">
+変数名の末尾に"$"をつけるとその変数は文字列型であると解釈されます。
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+なお文字列型変数に格納できる文字列は511文字までです。
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+また配列変数の次元は10次元まで宣言できます。例えば
+            </p>
+            <p class="" style="text-align:left">
+dim aa(10,20)
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+とするとaa(0,0)からaa(10,20)までの11x 21個の配列要素が設定されます。
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+■オブジェクトエディタを使ったプログラミング
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+同梱のオブジェクトエディタ”objedit.jar”を使用すると大きなプログラムでも快適に作成することができます。
+            </p>
+            <p class="" style="text-align:left">
+下図のように画面の適当な位置にコードを貼り付けて信号線でつないでいく方法でストレスを軽減することができます。
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+<img style="width:158.8mm; height:95.2mm" src="manual.html_files/8bbe41ae-cc87-11e8-894e-f69dccce6dc2.jpg" title="" alt="" align=""></p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+コードを貼り付けて、コンパイルボタンを押すとBasicプログラムが自動的の生成されて
+            </p>
+            <p class="" style="text-align:left">
+実行ボタンを押すと生成されたBasicプログラムが実行されます。
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+<img style="width:159.2mm; height:84.2mm" src="manual.html_files/96492652-cc87-11e8-894e-f69dccce6dc2.jpg" title="" alt="" align=""></p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+また、オブジェクトエディタ内ではローカル変数やローカルラベルを使うことが出来ます。
+            </p>
+            <p class="" style="text-align:left">
+具体的には変数名やラベル名の後に'”%”をつけるとローカル変数やラベルであるとみなされます。
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+ローカル変数を使うと変数名の重複を気にしなくてすむのでプログラミングが楽になります。
+            </p>
+            <p class="" style="text-align:left">
+(例)
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+'数値変数
+            </p>
+            <p class="" style="text-align:left">
+a%=2
+            </p>
+            <p class="" style="text-align:left">
+print b%
+            </p>
+            <p class="" style="text-align:left">
+'文字列変数
+            </p>
+            <p class="" style="text-align:left">
+aa%$=”abc”
+            </p>
+            <p class="" style="text-align:left">
+print bb%$
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+'ラベル
+            </p>
+            <p class="" style="text-align:left">
+@label1%:
+            </p>
+            <p class="" style="text-align:left">
+goto @label2%
+            </p>
+            <p class="" style="text-align:left">
+※ これらのローカル変数やラベルはコンパイル時にグローバル変数やラベルに変換されます。
+            </p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+</p>
+            <p class="" style="text-align:left">
+</p>
+            <p>
+</p>
+            <p>
+</p>
+</div>
+        <div>
+            <p>
+</p>
+</div>
+</body></html>

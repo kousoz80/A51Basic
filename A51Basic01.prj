@@ -7,7 +7,7 @@
 <width>200</width>
 <height>100</height>
 <ID_maker>26</ID_maker>
-<objectname>A51Basic</objectname>
+<objectname>A51Basic01</objectname>
 <description>新規のアプリケーション</description>
 <codeclip>
 <ID>_CSTART</ID>
@@ -844,295 +844,6 @@ int EscapeMode = ESC_NONE;
       }
 </codetext>
 </codeclip>
-<aobject>
-<ID>_A1</ID>
-<x0>100</x0>
-<y0>100</y0>
-<width>280</width>
-<objectname>GUI</objectname>
-<description>GUIオブジェクト
-</description>
-<state>
-<ID>_SINIT</ID>
-<x0>0</x0>
-<y0>40</y0>
-<width>70</width>
-<height>40</height>
-<text>  InitState</text>
-<isinitstate>1</isinitstate>
-</state>
-<pin>
-<ID>_Pstart</ID>
-<x0>400</x0>
-<y0>100</y0>
-<width>80</width>
-<height>26</height>
-<text>Start()</text>
-<px>0</px>
-<py>36</py>
-</pin>
-<pin>
-<ID>_PGUIout</ID>
-<x0>0</x0>
-<y0>84</y0>
-<width>180</width>
-<height>26</height>
-<text>GUI_created(JFrame f)</text>
-<px>0</px>
-<py>54</py>
-</pin>
-<pin>
-<ID>_PGUIclosed</ID>
-<x0>310</x0>
-<y0>0</y0>
-<width>180</width>
-<height>26</height>
-<text>GUI_closed()</text>
-<px>100</px>
-<py>6</py>
-</pin>
-<action>
-<ID>_Astart</ID>
-<comp1name>_Pstart</comp1name>
-<comp2name>_Ocreate</comp2name>
-</action>
-<operation>
-<ID>_Ocreate</ID>
-<state1>_SINIT</state1>
-<state2>_SINIT</state2>
-<x0>220</x0>
-<y0>40</y0>
-<width>130</width>
-<height>64</height>
-<inconnectx0>0</inconnectx0>
-<inconnecty0>30</inconnecty0>
-<outconnectx0>0</outconnectx0>
-<outconnecty0>30</outconnecty0>
-<inpintext>in()</inpintext>
-<inpinx0>90</inpinx0>
-<inpiny0>43</inpiny0>
-<inpinwidth>40</inpinwidth>
-<inpinheight>20</inpinheight>
-<outpintext>out()</outpintext>
-<outpinx0>90</outpinx0>
-<outpiny0>40</outpiny0>
-<outpinwidth>40</outpinwidth>
-<outpinheight>20</outpinheight>
-<inpinlinkcount>1</inpinlinkcount>
-<description></description>
-<codetext>// GUIを作成する
-XGUI x = new XGUI();
-
-</codetext>
-</operation>
-<pin>
-<ID>_PInputField</ID>
-<x0>0</x0>
-<y0>110</y0>
-<width>200</width>
-<height>26</height>
-<text>InputField_created(JTextField t)</text>
-<px>0</px>
-<py>72</py>
-</pin>
-<pin>
-<ID>_PAInputField</ID>
-<x0>0</x0>
-<y0>138</y0>
-<width>200</width>
-<height>26</height>
-<text>InputField_input(String s)</text>
-<px>0</px>
-<py>90</py>
-</pin>
-<pin>
-<ID>_PAEnterButton</ID>
-<x0>0</x0>
-<y0>166</y0>
-<width>200</width>
-<height>26</height>
-<text>EnterButton_clicked()</text>
-<px>0</px>
-<py>108</py>
-</pin>
-<pin>
-<ID>_PAStopButton</ID>
-<x0>0</x0>
-<y0>194</y0>
-<width>200</width>
-<height>26</height>
-<text>StopButton_clicked()</text>
-<px>0</px>
-<py>126</py>
-</pin>
-<pin>
-<ID>_PDisplay</ID>
-<x0>0</x0>
-<y0>222</y0>
-<width>200</width>
-<height>26</height>
-<text>Display_created(JLabel l)</text>
-<px>0</px>
-<py>144</py>
-</pin>
-<pin>
-<ID>_PPDisplay</ID>
-<x0>0</x0>
-<y0>250</y0>
-<width>200</width>
-<height>26</height>
-<text>Display_paint(Graphics g)</text>
-<px>0</px>
-<py>162</py>
-</pin>
-<pin>
-<ID>_PXEdit</ID>
-<x0>0</x0>
-<y0>278</y0>
-<width>200</width>
-<height>26</height>
-<text>XEdit_created(JTextArea t)</text>
-<px>0</px>
-<py>180</py>
-</pin>
-<codeclip>
-<ID>_CXSTART</ID>
-<x0>0</x0>
-<y0>0</y0>
-<width>300</width>
-<height>26</height>
-<codetext> class XGUI extends JFrame implements WindowListener{
- JPanel cnt;
-InputField IInputField;
- class InputField extends JTextField implements ActionListener{
-  InputField(){
- setOpaque( true );
- setName(  &quot;InputField&quot; );
- setFont( new Font( &quot;Dialog&quot;, 0, 20 ));
- setForeground( new Color(  51, 51, 51 ));
- setBackground( new Color(  255, 255, 255 ));
- setText( &quot;&quot; );
- addActionListener( this );
- InputField_created( this );
-}
- public void actionPerformed( ActionEvent e ){ InputField_input( getText() ); }
-}
-EnterButton IEnterButton;
- class EnterButton extends JButton implements ActionListener{
-  EnterButton(){
- setOpaque( true );
- setName(  &quot;EnterButton&quot; );
- setFont( new Font( &quot;Dialog&quot;, 0, 12 ));
- setForeground( new Color(  51, 51, 51 ));
- setBackground( new Color(  192, 192, 192 ));
- setHorizontalAlignment( 0 );
- setVerticalAlignment( 0 );
- setText( &quot;Enter&quot; );
- addActionListener( this );
-}
- public void actionPerformed( ActionEvent e ){ EnterButton_clicked(); }
-}
-StopButton IStopButton;
- class StopButton extends JButton implements ActionListener{
-  StopButton(){
- setOpaque( true );
- setName(  &quot;StopButton&quot; );
- setFont( new Font( &quot;Dialog&quot;, 0, 12 ));
- setForeground( new Color(  51, 51, 51 ));
- setBackground( new Color(  192, 192, 192 ));
- setHorizontalAlignment( 0 );
- setVerticalAlignment( 0 );
- setText( &quot;Stop&quot; );
- addActionListener( this );
-}
- public void actionPerformed( ActionEvent e ){ StopButton_clicked(); }
-}
-Display IDisplay;
- class Display extends JLabel{
-  Display(){
- setOpaque( true );
- setName(  &quot;Display&quot; );
- setFont( new Font( &quot;Monospaced&quot;, 0, 16 ));
- setForeground( new Color(  255, 255, 255 ));
- setBackground( new Color(  0, 0, 0 ));
- setHorizontalAlignment( 2 );
- setVerticalAlignment( 1 );
- setText( &quot;&quot; );
- Display_created( this );
-}
- public void paintComponent( Graphics g ){ super.paintComponent(g); Display_paint(g); }
-}
-XEdit IXEdit;
- class XEdit extends JTextArea{
- JScrollPane scrl;
-  XEdit(){
- setOpaque( true );
- setName(  &quot;XEdit&quot; );
- setFont( new Font( &quot;Dialog&quot;, 0, 16 ));
- setForeground( new Color(  51, 51, 51 ));
- setBackground( new Color(  255, 255, 255 ));
- setText( &quot;&quot; );
- scrl = new JScrollPane( this );
- XEdit_created( this );
-}
-}
- XGUI(){
- setTitle(&quot;A51Basic&quot;);
- cnt = new JPanel( new BorderLayout() );
- cnt.setPreferredSize(  new  Dimension( 717, 531 ) );
- ((Component)cnt).setBackground( new Color( 192, 192, 192 ) );
- IInputField = new InputField();
- cnt.add( IInputField, 0 );
- cnt.getLayout().removeLayoutComponent( IInputField );
- IInputField.setBounds( 3, 2, 547, 32 );
- IEnterButton = new EnterButton();
- cnt.add( IEnterButton, 0 );
- cnt.getLayout().removeLayoutComponent( IEnterButton );
- IEnterButton.setBounds( 555, 1, 80, 32 );
- IStopButton = new StopButton();
- cnt.add( IStopButton, 0 );
- cnt.getLayout().removeLayoutComponent( IStopButton );
- IStopButton.setBounds( 639, 0, 78, 34 );
- IDisplay = new Display();
- cnt.add( IDisplay, 0 );
- cnt.getLayout().removeLayoutComponent( IDisplay );
- IDisplay.setBounds( 2, 37, 716, 488 );
- IXEdit = new XEdit();
- cnt.add( IXEdit.scrl, 0 );
- cnt.getLayout().removeLayoutComponent( IXEdit.scrl );
- (  IXEdit.scrl ).setBounds( 2, 37, 716, 488 );
- setContentPane( cnt );
- pack();
- addWindowListener( this );
- setVisible( true );
- GUI_created( this );
-}
- public void windowActivated( WindowEvent e ){}
- public void windowClosed( WindowEvent e ){}
- public void windowClosing( WindowEvent e ){ GUI_closed(); }
- public void windowDeactivated( WindowEvent e ){}
- public void windowDeiconified( WindowEvent e ){}
- public void windowIconified( WindowEvent e ){}
- public void windowOpened( WindowEvent e ){}
-}
-</codetext>
-</codeclip>
-<ID_maker>27</ID_maker>
-<height>202</height>
-<レイアウト>A51Basic
-717
-531
-192
-192
-192
-xxscale=1
-TEXTFIELD;InputField;null;3;2;547;32;51;51;51;255;255;255;Dialog;12;1;1;1;JTextField;
-BUTTON;EnterButton;Enter;555;1;80;32;51;51;51;192;192;192;Dialog;12;null;0;0;1;0;1;JButton;
-BUTTON;StopButton;Stop;639;0;78;34;51;51;51;192;192;192;Dialog;12;null;0;0;1;0;1;JButton;
-LABEL;Display;null;2;37;716;488;255;255;255;0;0;0;Monospaced;16;null;2;1;1;1;1;JLabel;
-TEXTAREA;XEdit;null;483;551;57;18;51;51;51;255;255;255;Dialog;12;1;1;1;JTextArea;
-</レイアウト>
-</aobject>
 <relation>
 <ID>_R20</ID>
 <pin1name>_A1(_PXEdit)</pin1name>
@@ -4213,7 +3924,7 @@ double val( String str ) throws BasicError{
   try{
   if( str.length() == 0 ) return 0.0;
   char c = str.charAt(0);
-  if( ( c &gt;= &apos;0&apos; &amp;&amp; c &lt;= &apos;9&apos; ) || c == &apos;.&apos; ) d = xparseDouble( str );
+  if( ( c &gt;= &apos;0&apos; &amp;&amp; c &lt;= &apos;9&apos; ) || c == &apos;.&apos; || c == &apos;-&apos; || c == &apos;+&apos; ) d = xparseDouble( str );
   else if( c == &apos;&amp;&apos; ){
     if( str.length() &lt; 2 ) return 0.0;
     char c2 = str.charAt(1);
@@ -4317,6 +4028,295 @@ int xparseInt( String s ){
 }
 </codetext>
 </codeclip>
+<aobject>
+<ID>_A1</ID>
+<x0>100</x0>
+<y0>100</y0>
+<width>280</width>
+<objectname>GUI</objectname>
+<description>GUIオブジェクト
+</description>
+<state>
+<ID>_SINIT</ID>
+<x0>0</x0>
+<y0>40</y0>
+<width>70</width>
+<height>40</height>
+<text>  InitState</text>
+<isinitstate>1</isinitstate>
+</state>
+<pin>
+<ID>_Pstart</ID>
+<x0>400</x0>
+<y0>100</y0>
+<width>80</width>
+<height>26</height>
+<text>Start()</text>
+<px>0</px>
+<py>36</py>
+</pin>
+<pin>
+<ID>_PGUIout</ID>
+<x0>0</x0>
+<y0>84</y0>
+<width>180</width>
+<height>26</height>
+<text>GUI_created(JFrame f)</text>
+<px>0</px>
+<py>54</py>
+</pin>
+<pin>
+<ID>_PGUIclosed</ID>
+<x0>310</x0>
+<y0>0</y0>
+<width>180</width>
+<height>26</height>
+<text>GUI_closed()</text>
+<px>100</px>
+<py>6</py>
+</pin>
+<action>
+<ID>_Astart</ID>
+<comp1name>_Pstart</comp1name>
+<comp2name>_Ocreate</comp2name>
+</action>
+<operation>
+<ID>_Ocreate</ID>
+<state1>_SINIT</state1>
+<state2>_SINIT</state2>
+<x0>220</x0>
+<y0>40</y0>
+<width>130</width>
+<height>64</height>
+<inconnectx0>0</inconnectx0>
+<inconnecty0>30</inconnecty0>
+<outconnectx0>0</outconnectx0>
+<outconnecty0>30</outconnecty0>
+<inpintext>in()</inpintext>
+<inpinx0>90</inpinx0>
+<inpiny0>43</inpiny0>
+<inpinwidth>40</inpinwidth>
+<inpinheight>20</inpinheight>
+<outpintext>out()</outpintext>
+<outpinx0>90</outpinx0>
+<outpiny0>40</outpiny0>
+<outpinwidth>40</outpinwidth>
+<outpinheight>20</outpinheight>
+<inpinlinkcount>1</inpinlinkcount>
+<description></description>
+<codetext>// GUIを作成する
+XGUI x = new XGUI();
+
+</codetext>
+</operation>
+<pin>
+<ID>_PInputField</ID>
+<x0>0</x0>
+<y0>110</y0>
+<width>200</width>
+<height>26</height>
+<text>InputField_created(JTextField t)</text>
+<px>0</px>
+<py>72</py>
+</pin>
+<pin>
+<ID>_PAInputField</ID>
+<x0>0</x0>
+<y0>138</y0>
+<width>200</width>
+<height>26</height>
+<text>InputField_input(String s)</text>
+<px>0</px>
+<py>90</py>
+</pin>
+<pin>
+<ID>_PAEnterButton</ID>
+<x0>0</x0>
+<y0>166</y0>
+<width>200</width>
+<height>26</height>
+<text>EnterButton_clicked()</text>
+<px>0</px>
+<py>108</py>
+</pin>
+<pin>
+<ID>_PAStopButton</ID>
+<x0>0</x0>
+<y0>194</y0>
+<width>200</width>
+<height>26</height>
+<text>StopButton_clicked()</text>
+<px>0</px>
+<py>126</py>
+</pin>
+<pin>
+<ID>_PDisplay</ID>
+<x0>0</x0>
+<y0>222</y0>
+<width>200</width>
+<height>26</height>
+<text>Display_created(JLabel l)</text>
+<px>0</px>
+<py>144</py>
+</pin>
+<pin>
+<ID>_PPDisplay</ID>
+<x0>0</x0>
+<y0>250</y0>
+<width>200</width>
+<height>26</height>
+<text>Display_paint(Graphics g)</text>
+<px>0</px>
+<py>162</py>
+</pin>
+<pin>
+<ID>_PXEdit</ID>
+<x0>0</x0>
+<y0>278</y0>
+<width>200</width>
+<height>26</height>
+<text>XEdit_created(JTextArea t)</text>
+<px>0</px>
+<py>180</py>
+</pin>
+<codeclip>
+<ID>_CXSTART</ID>
+<x0>0</x0>
+<y0>0</y0>
+<width>300</width>
+<height>26</height>
+<codetext> class XGUI extends JFrame implements WindowListener{
+ JPanel cnt;
+InputField IInputField;
+ class InputField extends JTextField implements ActionListener{
+  InputField(){
+ setOpaque( true );
+ setName(  &quot;InputField&quot; );
+ setFont( new Font( &quot;Dialog&quot;, 0, 12 ));
+ setForeground( new Color(  51, 51, 51 ));
+ setBackground( new Color(  255, 255, 255 ));
+ setText( &quot;&quot; );
+ addActionListener( this );
+ InputField_created( this );
+}
+ public void actionPerformed( ActionEvent e ){ InputField_input( getText() ); }
+}
+EnterButton IEnterButton;
+ class EnterButton extends JButton implements ActionListener{
+  EnterButton(){
+ setOpaque( true );
+ setName(  &quot;EnterButton&quot; );
+ setFont( new Font( &quot;Dialog&quot;, 0, 12 ));
+ setForeground( new Color(  51, 51, 51 ));
+ setBackground( new Color(  192, 192, 192 ));
+ setHorizontalAlignment( 0 );
+ setVerticalAlignment( 0 );
+ setText( &quot;Enter&quot; );
+ addActionListener( this );
+}
+ public void actionPerformed( ActionEvent e ){ EnterButton_clicked(); }
+}
+StopButton IStopButton;
+ class StopButton extends JButton implements ActionListener{
+  StopButton(){
+ setOpaque( true );
+ setName(  &quot;StopButton&quot; );
+ setFont( new Font( &quot;Dialog&quot;, 0, 12 ));
+ setForeground( new Color(  51, 51, 51 ));
+ setBackground( new Color(  192, 192, 192 ));
+ setHorizontalAlignment( 0 );
+ setVerticalAlignment( 0 );
+ setText( &quot;Stop&quot; );
+ addActionListener( this );
+}
+ public void actionPerformed( ActionEvent e ){ StopButton_clicked(); }
+}
+Display IDisplay;
+ class Display extends JLabel{
+  Display(){
+ setOpaque( true );
+ setName(  &quot;Display&quot; );
+ setFont( new Font( &quot;Monospaced&quot;, 0, 16 ));
+ setForeground( new Color(  255, 255, 255 ));
+ setBackground( new Color(  0, 0, 0 ));
+ setHorizontalAlignment( 2 );
+ setVerticalAlignment( 1 );
+ setText( &quot;&quot; );
+ Display_created( this );
+}
+ public void paintComponent( Graphics g ){ super.paintComponent(g); Display_paint(g); }
+}
+XEdit IXEdit;
+ class XEdit extends JTextArea{
+ JScrollPane scrl;
+  XEdit(){
+ setOpaque( true );
+ setName(  &quot;XEdit&quot; );
+ setFont( new Font( &quot;Dialog&quot;, 0, 12 ));
+ setForeground( new Color(  51, 51, 51 ));
+ setBackground( new Color(  255, 255, 255 ));
+ setText( &quot;&quot; );
+ scrl = new JScrollPane( this );
+ XEdit_created( this );
+}
+}
+ XGUI(){
+ setTitle(&quot;A51Basic&quot;);
+ cnt = new JPanel( new BorderLayout() );
+ cnt.setPreferredSize(  new  Dimension( 717, 531 ) );
+ ((Component)cnt).setBackground( new Color( 192, 192, 192 ) );
+ IInputField = new InputField();
+ cnt.add( IInputField, 0 );
+ cnt.getLayout().removeLayoutComponent( IInputField );
+ IInputField.setBounds( 3, 2, 547, 32 );
+ IEnterButton = new EnterButton();
+ cnt.add( IEnterButton, 0 );
+ cnt.getLayout().removeLayoutComponent( IEnterButton );
+ IEnterButton.setBounds( 555, 1, 80, 32 );
+ IStopButton = new StopButton();
+ cnt.add( IStopButton, 0 );
+ cnt.getLayout().removeLayoutComponent( IStopButton );
+ IStopButton.setBounds( 639, 0, 78, 34 );
+ IDisplay = new Display();
+ cnt.add( IDisplay, 0 );
+ cnt.getLayout().removeLayoutComponent( IDisplay );
+ IDisplay.setBounds( 2, 37, 716, 488 );
+ IXEdit = new XEdit();
+ cnt.add( IXEdit.scrl, 0 );
+ cnt.getLayout().removeLayoutComponent( IXEdit.scrl );
+ (  IXEdit.scrl ).setBounds( 483, 551, 57, 18 );
+ setContentPane( cnt );
+ pack();
+ addWindowListener( this );
+ setVisible( true );
+ GUI_created( this );
+}
+ public void windowActivated( WindowEvent e ){}
+ public void windowClosed( WindowEvent e ){}
+ public void windowClosing( WindowEvent e ){ GUI_closed(); }
+ public void windowDeactivated( WindowEvent e ){}
+ public void windowDeiconified( WindowEvent e ){}
+ public void windowIconified( WindowEvent e ){}
+ public void windowOpened( WindowEvent e ){}
+}
+</codetext>
+</codeclip>
+<ID_maker>27</ID_maker>
+<height>202</height>
+<レイアウト>A51Basic
+717
+531
+192
+192
+192
+xxscale=1
+TEXTFIELD;InputField;null;3;2;547;32;51;51;51;255;255;255;Dialog;12;1;1;1;JTextField;
+BUTTON;EnterButton;Enter;555;1;80;32;51;51;51;192;192;192;Dialog;12;null;0;0;1;0;1;JButton;
+BUTTON;StopButton;Stop;639;0;78;34;51;51;51;192;192;192;Dialog;12;null;0;0;1;0;1;JButton;
+LABEL;Display;null;2;37;716;488;255;255;255;0;0;0;Monospaced;16;null;2;1;1;1;1;JLabel;
+TEXTAREA;XEdit;null;483;551;57;18;51;51;51;255;255;255;Dialog;12;1;1;1;JTextArea;
+</レイアウト>
+</aobject>
 <プロパティ>
 <ID>properties</ID>
 <LookandFeel>javax.swing.plaf.metal.MetalLookAndFeel</LookandFeel>
@@ -4325,9 +4325,9 @@ int xparseInt( String s ){
 <MainWinWidth>1024</MainWinWidth>
 <MainWinHeight>740</MainWinHeight>
 <MesgWinx0>0</MesgWinx0>
-<MesgWiny0>566</MesgWiny0>
+<MesgWiny0>0</MesgWiny0>
 <MesgWinWidth>1024</MesgWinWidth>
-<MesgWinHeight>174</MesgWinHeight>
+<MesgWinHeight>745</MesgWinHeight>
 <FileWinx0>36</FileWinx0>
 <FileWiny0>478</FileWiny0>
 <FileWinWidth>578</FileWinWidth>
@@ -4347,10 +4347,10 @@ int xparseInt( String s ){
 <NoSourceCreate>0</NoSourceCreate>
 <JavaEditCommand>geany</JavaEditCommand>
 <JavaViewCommand></JavaViewCommand>
-<HelpCommand></HelpCommand>
+<HelpCommand>xdg-open ./help/manual.html</HelpCommand>
 <ApplicationType>0</ApplicationType>
-<CompileCommand0>./compile</CompileCommand0>
-<RunCommand0>./run</RunCommand0>
+<CompileCommand0>./compile_java</CompileCommand0>
+<RunCommand0>./run_java</RunCommand0>
 <GUIDesignerCommand0>java -jar guidsin.jar -java</GUIDesignerCommand0>
 <ImportFiles0> import java.awt.*;
  import java.awt.event.*;
@@ -4385,8 +4385,8 @@ class Starter{
 <ProgramStartupCode0> String[] ARGS;
 </ProgramStartupCode0>
 <NativeHelpCommand0></NativeHelpCommand0>
-<CompileCommand1>./compile_applet</CompileCommand1>
-<RunCommand1>./run_applet</RunCommand1>
+<CompileCommand1></CompileCommand1>
+<RunCommand1></RunCommand1>
 <GUIDesignerCommand1>java -jar guidsin.jar -applet</GUIDesignerCommand1>
 <ImportFiles1> import java.awt.*;
  import java.awt.event.*;
@@ -4409,8 +4409,8 @@ class Starter{
 <ProgramStartupCode1> Applet APPLET;
 </ProgramStartupCode1>
 <NativeHelpCommand1></NativeHelpCommand1>
-<CompileCommand2>./compile_cpp</CompileCommand2>
-<RunCommand2>./run_cpp</RunCommand2>
+<CompileCommand2></CompileCommand2>
+<RunCommand2></RunCommand2>
 <GUIDesignerCommand2></GUIDesignerCommand2>
 <ImportFiles2>#include &lt;stdio.h&gt;
 
@@ -4422,8 +4422,8 @@ void Startup();
  }
 </ProgramStartupCode2>
 <NativeHelpCommand2></NativeHelpCommand2>
-<CompileCommand3>./compile_cppw</CompileCommand3>
-<RunCommand3>./run_cppw</RunCommand3>
+<CompileCommand3></CompileCommand3>
+<RunCommand3></RunCommand3>
 <GUIDesignerCommand3>java -jar guidsin.jar -cpp</GUIDesignerCommand3>
 <ImportFiles3>#include &lt;stdio.h&gt;
 #include &lt;sys/stat.h&gt;
@@ -4440,8 +4440,8 @@ Startup();
 <MoveStep>8</MoveStep>
 <ImageEditCommand></ImageEditCommand>
 <CompilerFileName>javac.exe</CompilerFileName>
-<CompileCommand4>./compile_android2 Test com example test</CompileCommand4>
-<RunCommand4>echo no action</RunCommand4>
+<CompileCommand4>./compile_android Test com example test</CompileCommand4>
+<RunCommand4>./run_android Test com example test</RunCommand4>
 <GUIDesignerCommand4>java -jar guidsin.jar -android</GUIDesignerCommand4>
 <ImportFiles4>package com.example.test;
 
@@ -4529,7 +4529,7 @@ public class HelloWorld extends Activity {
 </NativeHelpCommand4>
 <HtmlEditCommand></HtmlEditCommand>
 <CompileCommand5></CompileCommand5>
-<RunCommand5>java -jar basic.jar test.bas</RunCommand5>
+<RunCommand5></RunCommand5>
 <GUIDesignerCommand5></GUIDesignerCommand5>
 <ImportFiles5></ImportFiles5>
 <ProgramStartupCode5>gosub @_PSTART
@@ -4537,8 +4537,8 @@ end
 </ProgramStartupCode5>
 <NativeHelpCommand5></NativeHelpCommand5>
 <NoOptimizePin>0</NoOptimizePin>
-<CompileCommand6>./compile_ai01</CompileCommand6>
-<RunCommand6>./run_ai01</RunCommand6>
+<CompileCommand6>./compile_c</CompileCommand6>
+<RunCommand6>./run_c</RunCommand6>
 <GUIDesignerCommand6></GUIDesignerCommand6>
 <ImportFiles6>#include &lt;setjmp.h&gt;
 #include &lt;pthread.h&gt;
@@ -4573,5 +4573,13 @@ int main( int argc, char** argv ){
 }
 </ProgramStartupCode6>
 <NativeHelpCommand6></NativeHelpCommand6>
+<IDF_LocalVariable5>\</IDF_LocalVariable5>
+<IDF_LocalVariable7>\</IDF_LocalVariable7>
+<CompileCommand7></CompileCommand7>
+<RunCommand7></RunCommand7>
+<GUIDesignerCommand7></GUIDesignerCommand7>
+<ImportFiles7></ImportFiles7>
+<ProgramStartupCode7></ProgramStartupCode7>
+<NativeHelpCommand7></NativeHelpCommand7>
 </プロパティ>
 </xobject>

@@ -173,7 +173,6 @@ graphics.setColor( new Color(for_r, for_g, for_b));
 graphics.fillRect(posx+3, posy, 3, fontsize);
 a51basic = new A51Basic();
 a51basic.startBasic();
-disp_prog_mode(false);
 </codetext>
 </operation>
 <operation>
@@ -1215,6 +1214,7 @@ class BasicThread extends Thread{
     try{
  
       // 通常処理
+      disp_prog_mode(false);
       disp_puts( &quot;READY\n&quot; );_disp();
       while( run_basic ){
 

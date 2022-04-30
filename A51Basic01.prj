@@ -879,11 +879,13 @@ class keyinput_listener implements DocumentListener{
 </codeclip>
 <codeclip>
 <ID>_C25</ID>
-<x0>625</x0>
-<y0>106</y0>
-<width>231</width>
-<height>24</height>
-<codetext>//A-51Basicインタプリタver 0.3.1
+<x0>634</x0>
+<y0>69</y0>
+<width>271</width>
+<height>52</height>
+<codetext>//A-51Basicインタプリタver 0.3.2
+// 変更点：nextコマンドの不具合修正
+// hex$(), oct$(), bin$()関数の追加
 
 
 // Basic処理系
@@ -1091,7 +1093,10 @@ String Function[] ={
   &quot;instr&quot;, 
   &quot;rnd&quot;, 
   &quot;netstat&quot;,
-  &quot;recv&quot; 
+  &quot;recv&quot;, 
+  &quot;hex$&quot;, 
+  &quot;oct$&quot;, 
+  &quot;bin$&quot; 
 };
 
 
@@ -1190,7 +1195,7 @@ public void startBasic(){
 
   else{
     disp_puts( &quot;A-51 Basic for Java\n&quot; );_disp();
-    disp_puts( &quot;version 0.3.1 \n&quot; );_disp();
+    disp_puts( &quot;version 0.3.2 \n&quot; );_disp();
     ThreadBasic.start();
   }
 
@@ -2156,7 +2161,11 @@ int cmd_next() throws BasicError{
   if( ForStackP &lt;= 0 ) assertError(&quot;for文なしではnext命令を実行できません&quot;);
   ForStackP--;
   if( TokenType == VARIABLE ){
-    if( ForStack[ForStackP].var != get_variable( TokenText.toString() ) ) assertError(&quot;next without for&quot;);
+    Variable v = get_variable(TokenText.toString());
+    while( ForStack[ForStackP].var != v ){
+      if( ForStackP &lt;= 0 ) assertError(&quot;for文なしではnext命令を実行できません&quot;);
+      ForStackP--;
+    }
     getToken();
   }
 
@@ -3312,6 +3321,9 @@ void doBasicFunction( int func ) throws BasicError{
   case 23: func_rnd();    return;
   case 24: func_netstat();return;
   case 25: func_recv();   return;
+  case 26: func_hexs();   return;
+  case 27: func_octs();   return;
+  case 28: func_bins();   return;
   }
   return;
 }
@@ -3761,6 +3773,40 @@ int func_recv()throws BasicError{
 
   return 0;
 }
+
+
+/* hex$関数 */
+int func_hexs() throws BasicError{
+  getToken();
+  checkToken(&quot;(&quot;);
+  eval_expression();
+  checkToken(&quot;)&quot;);
+  put_string(Integer.toHexString((int)get_number()));
+  return 0;
+}
+
+
+/* oct$関数 */
+int func_octs() throws BasicError{
+  getToken();
+  checkToken(&quot;(&quot;);
+  eval_expression();
+  checkToken(&quot;)&quot;);
+  put_string(Integer.toOctalString((int)get_number()));
+  return 0;
+}
+
+
+/* bin$関数 */
+int func_bins() throws BasicError{
+  getToken();
+  checkToken(&quot;(&quot;);
+  eval_expression();
+  checkToken(&quot;)&quot;);
+  put_string(Integer.toBinaryString((int)get_number()));
+  return 0;
+}
+
 
 
 /* ------------------------------------------ ここからその他色々な関数　------------------------------------- */

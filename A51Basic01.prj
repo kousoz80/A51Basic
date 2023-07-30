@@ -1202,9 +1202,7 @@ public void assertError( String mesg ) throws BasicError{
   if( CurrentProg != null &amp;&amp; CurrentProg.lineno &gt; 0){
     disp_puts( &quot; in line &quot;+ CurrentProg.lineno );_disp();
   }
-  else{
-   disp_puts( &quot;\nREADY\n&quot; );_disp();
-  }
+  disp_puts( &quot;\nREADY\n&quot; );_disp();
   BasicError e = new BasicError( mesg );
   throw e;
 }

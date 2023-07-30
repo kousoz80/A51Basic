@@ -6,7 +6,7 @@
 <y0>0</y0>
 <width>200</width>
 <height>100</height>
-<ID_maker>26</ID_maker>
+<ID_maker>27</ID_maker>
 <objectname>A51Basic01</objectname>
 <description>新規のアプリケーション</description>
 <codeclip>
@@ -80,17 +80,17 @@ boolean prog_mode = false;
 </relation>
 <xobject>
 <ID>_X_G12</ID>
-<x0>408</x0>
-<y0>64</y0>
-<width>191</width>
-<height>242</height>
+<x0>418</x0>
+<y0>57</y0>
+<width>194</width>
+<height>260</height>
 <objectname>Control</objectname>
 <description></description>
 <operation>
 <ID>_O10</ID>
 <state1>_SINIT</state1>
 <state2>_SINIT</state2>
-<x0>401</x0>
+<x0>201</x0>
 <y0>249</y0>
 <width>274</width>
 <height>54</height>
@@ -116,7 +116,7 @@ boolean prog_mode = false;
 <ID>_O8</ID>
 <state1>_SINIT</state1>
 <state2>_SINIT</state2>
-<x0>400</x0>
+<x0>200</x0>
 <y0>185</y0>
 <width>113</width>
 <height>53</height>
@@ -143,7 +143,7 @@ boolean prog_mode = false;
 <ID>_O5</ID>
 <state1>_SINIT</state1>
 <state2>_SINIT</state2>
-<x0>394</x0>
+<x0>194</x0>
 <y0>117</y0>
 <width>134</width>
 <height>56</height>
@@ -179,7 +179,7 @@ a51basic.startBasic();
 <ID>_O3</ID>
 <state1>_SINIT</state1>
 <state2>_SINIT</state2>
-<x0>391</x0>
+<x0>191</x0>
 <y0>20</y0>
 <width>129</width>
 <height>73</height>
@@ -206,7 +206,7 @@ System.exit(0);
 <pin>
 <ID>_P13</ID>
 <text>draw_image(Graphics g)</text>
-<x0>216</x0>
+<x0>16</x0>
 <y0>279</y0>
 <width>131</width>
 <height>27</height>
@@ -221,7 +221,7 @@ System.exit(0);
 <pin>
 <ID>_P15</ID>
 <text>display_is(JLabel l)</text>
-<x0>228</x0>
+<x0>28</x0>
 <y0>216</y0>
 <width>105</width>
 <height>20</height>
@@ -236,7 +236,7 @@ System.exit(0);
 <pin>
 <ID>_P17</ID>
 <text>start()</text>
-<x0>265</x0>
+<x0>65</x0>
 <y0>152</y0>
 <width>45</width>
 <height>21</height>
@@ -251,7 +251,7 @@ System.exit(0);
 <pin>
 <ID>_P19</ID>
 <text>quit()</text>
-<x0>262</x0>
+<x0>62</x0>
 <y0>73</y0>
 <width>43</width>
 <height>23</height>
@@ -263,10 +263,10 @@ System.exit(0);
 <pin2name>_O3</pin2name>
 <pin1name>_P19</pin1name>
 </relation>
-<ID_maker>39</ID_maker>
+<ID_maker>42</ID_maker>
 <pin>
 <ID>_P21</ID>
-<x0>219</x0>
+<x0>19</x0>
 <y0>422</y0>
 <width>109</width>
 <height>24</height>
@@ -276,7 +276,7 @@ System.exit(0);
 </pin>
 <pin>
 <ID>_P22</ID>
-<x0>214</x0>
+<x0>14</x0>
 <y0>357</y0>
 <width>151</width>
 <height>24</height>
@@ -286,7 +286,7 @@ System.exit(0);
 </pin>
 <pin>
 <ID>_P23</ID>
-<x0>247</x0>
+<x0>47</x0>
 <y0>499</y0>
 <width>50</width>
 <height>25</height>
@@ -296,7 +296,7 @@ System.exit(0);
 </pin>
 <pin>
 <ID>_P24</ID>
-<x0>240</x0>
+<x0>40</x0>
 <y0>570</y0>
 <width>51</width>
 <height>24</height>
@@ -308,7 +308,7 @@ System.exit(0);
 <ID>_O25</ID>
 <state1>_SINIT</state1>
 <state2>_SINIT</state2>
-<x0>403</x0>
+<x0>203</x0>
 <y0>326</y0>
 <width>118</width>
 <height>53</height>
@@ -341,7 +341,7 @@ cmd_line.getDocument().addDocumentListener(listener = new keyinput_listener());
 <ID>_O27</ID>
 <state1>_SINIT</state1>
 <state2>_SINIT</state2>
-<x0>405</x0>
+<x0>205</x0>
 <y0>390</y0>
 <width>171</width>
 <height>53</height>
@@ -375,7 +375,7 @@ KeyCode=&apos;\r&apos;;
 <ID>_O29</ID>
 <state1>_SINIT</state1>
 <state2>_SINIT</state2>
-<x0>404</x0>
+<x0>204</x0>
 <y0>466</y0>
 <width>306</width>
 <height>56</height>
@@ -409,7 +409,7 @@ KeyCode = &apos;\r&apos;;
 <ID>_O31</ID>
 <state1>_SINIT</state1>
 <state2>_SINIT</state2>
-<x0>410</x0>
+<x0>210</x0>
 <y0>538</y0>
 <width>122</width>
 <height>52</height>
@@ -447,7 +447,7 @@ else{
 </relation>
 <pin>
 <ID>_P34</ID>
-<x0>552</x0>
+<x0>352</x0>
 <y0>42</y0>
 <width>127</width>
 <height>23</height>
@@ -459,7 +459,7 @@ else{
 <ID>_O36</ID>
 <state1>_SINIT</state1>
 <state2>_SINIT</state2>
-<x0>710</x0>
+<x0>510</x0>
 <y0>60</y0>
 <width>116</width>
 <height>50</height>
@@ -488,6 +488,48 @@ edit.getParent().setVisible(false);
 <pin1name>_P34</pin1name>
 <pin2name>_O36</pin2name>
 </relation>
+<pin>
+<ID>_P39</ID>
+<x0>478</x0>
+<y0>191</y0>
+<width>144</width>
+<height>30</height>
+<text>edit_button_clicked()</text>
+<px>8</px>
+<py>242</py>
+</pin>
+<operation>
+<ID>_O40</ID>
+<state1>_SINIT</state1>
+<state2>_SINIT</state2>
+<x0>673</x0>
+<y0>167</y0>
+<width>222</width>
+<height>48</height>
+<inconnectx0>0</inconnectx0>
+<inconnecty0>40</inconnecty0>
+<outconnectx0>0</outconnectx0>
+<outconnecty0>40</outconnecty0>
+<inpintext>in()</inpintext>
+<inpinx0>0</inpinx0>
+<inpiny0>28</inpiny0>
+<inpinwidth>40</inpinwidth>
+<inpinheight>20</inpinheight>
+<outpintext>out()</outpintext>
+<outpinx0>90</outpinx0>
+<outpiny0>40</outpiny0>
+<outpinwidth>40</outpinwidth>
+<outpinheight>20</outpinheight>
+<inpinlinkcount>1</inpinlinkcount>
+<description></description>
+<codetext>disp_prog_mode(!prog_mode);
+</codetext>
+</operation>
+<relation>
+<ID>_R41</ID>
+<pin1name>_P39</pin1name>
+<pin2name>_O40</pin2name>
+</relation>
 </xobject>
 <relation>
 <ID>_R13</ID>
@@ -511,8 +553,8 @@ edit.getParent().setVisible(false);
 </relation>
 <codeclip>
 <ID>_C17</ID>
-<x0>629</x0>
-<y0>150</y0>
+<x0>642</x0>
+<y0>147</y0>
 <width>99</width>
 <height>19</height>
 <codetext>// 描画関数
@@ -830,16 +872,23 @@ int EscapeMode = ESC_NONE;
       prog_mode = mode;
       if( prog_mode ){
         a51basic.save_edit();
-        edit.getParent().setVisible(true); 
         display.setVisible(false); 
+        edit.getParent().setVisible(true); 
         edit.requestFocusInWindow();
         edit.setCaretPosition(0); 
           }
       else{
         a51basic.load_edit();
         edit.getParent().setVisible(false); 
-        display.setVisible(true); 
+        display.setVisible(true);
         cmd_line.requestFocusInWindow(); 
+            new Thread(new Runnable() {
+              @Override
+	          public void run() {
+                try{ Thread.sleep(50);} catch(Exception e){}
+                InputBuffer = &quot;\r&quot;;
+	          }
+	        }).start();
          }
       }
 </codetext>
@@ -881,10 +930,12 @@ class keyinput_listener implements DocumentListener{
 <ID>_C25</ID>
 <x0>634</x0>
 <y0>69</y0>
-<width>271</width>
-<height>52</height>
-<codetext>//A-51Basicインタプリタver 0.3.2
-// 変更点：nextコマンドの不具合修正
+<width>274</width>
+<height>65</height>
+<codetext>//A-51Basicインタプリタver 0.3.3
+// 変更点：
+// Editボタンを追加
+// nextコマンドの不具合修正
 // hex$(), oct$(), bin$()関数の追加
 
 
@@ -1151,7 +1202,9 @@ public void assertError( String mesg ) throws BasicError{
   if( CurrentProg != null &amp;&amp; CurrentProg.lineno &gt; 0){
     disp_puts( &quot; in line &quot;+ CurrentProg.lineno );_disp();
   }
-  disp_puts( &quot;\n&quot; );_disp();
+  else{
+   disp_puts( &quot;\nREADY\n&quot; );_disp();
+  }
   BasicError e = new BasicError( mesg );
   throw e;
 }
@@ -1194,8 +1247,10 @@ public void startBasic(){
   }
 
   else{
+    Prog = new Program();
+    disp_prog_mode(false);
     disp_puts( &quot;A-51 Basic for Java\n&quot; );_disp();
-    disp_puts( &quot;version 0.3.2 \n&quot; );_disp();
+    disp_puts( &quot;version 0.3.3 \n&quot; );_disp();
     ThreadBasic.start();
   }
 
@@ -1208,14 +1263,10 @@ class BasicThread extends Thread{
 
   public void run(){
 
-   Prog = new Program();
-
     // コマンド入力ループ
     try{
  
       // 通常処理
-      disp_prog_mode(false);
-      disp_puts( &quot;READY\n&quot; );_disp();
       while( run_basic ){
 
         // 計算スタック初期化
@@ -1241,7 +1292,9 @@ class BasicThread extends Thread{
           disp_puts(&quot;\nREADY\n&quot; );_disp();
         }
       }
-      if( !run_basic ) assertError(&quot;Break&quot;);
+      if( !run_basic ){
+        assertError(&quot;Break&quot;);
+      }
     } catch( BasicError e ){ resumeError(); }
   }
 
@@ -4339,7 +4392,27 @@ int main( int argc, char** argv ){
 <ImportFiles7></ImportFiles7>
 <ProgramStartupCode7></ProgramStartupCode7>
 <NativeHelpCommand7></NativeHelpCommand7>
+<OpenCompileDialog>0</OpenCompileDialog>
+<ScriptExecCommand></ScriptExecCommand>
+<RunCommand8></RunCommand8>
+<CompileCommand9></CompileCommand9>
+<RunCommand9></RunCommand9>
+<GUIDesignerCommand9></GUIDesignerCommand9>
+<ImportFiles9></ImportFiles9>
+<ProgramStartupCode9></ProgramStartupCode9>
+<NativeHelpCommand9></NativeHelpCommand9>
+<CompileCommand10></CompileCommand10>
+<RunCommand10></RunCommand10>
+<GUIDesignerCommand10></GUIDesignerCommand10>
+<ImportFiles10></ImportFiles10>
+<ProgramStartupCode10></ProgramStartupCode10>
+<NativeHelpCommand10></NativeHelpCommand10>
 </プロパティ>
+<relation>
+<ID>_R26</ID>
+<pin1name>_A1(_PAEditButton)</pin1name>
+<pin2name>_X_G12(_P39)</pin2name>
+</relation>
 <aobject>
 <ID>_A1</ID>
 <x0>100</x0>
@@ -4491,6 +4564,16 @@ XGUI x = new XGUI();
 <px>0</px>
 <py>180</py>
 </pin>
+<pin>
+<ID>_PAEditButton</ID>
+<x0>0</x0>
+<y0>306</y0>
+<width>200</width>
+<height>26</height>
+<text>EditButton_clicked()</text>
+<px>0</px>
+<py>198</py>
+</pin>
 <codeclip>
 <ID>_CXSTART</ID>
 <x0>0</x0>
@@ -4572,31 +4655,50 @@ XEdit IXEdit;
  XEdit_created( this );
 }
 }
+EditButton IEditButton;
+ class EditButton extends JButton implements ActionListener{
+  EditButton(){
+ setOpaque( true );
+ setName(  &quot;EditButton&quot; );
+ setFont( new Font( &quot;Dialog&quot;, 0, 12 ));
+ setForeground( new Color(  51, 51, 51 ));
+ setBackground( new Color(  192, 192, 192 ));
+ setHorizontalAlignment( 0 );
+ setVerticalAlignment( 0 );
+ setText( &quot;Edit&quot; );
+ addActionListener( this );
+}
+ public void actionPerformed( ActionEvent e ){ EditButton_clicked(); }
+}
  XGUI(){
  setTitle(&quot;A51Basic&quot;);
  cnt = new JPanel( new BorderLayout() );
- cnt.setPreferredSize(  new  Dimension( 717, 531 ) );
+ cnt.setPreferredSize(  new  Dimension( 743, 528 ) );
  ((Component)cnt).setBackground( new Color( 192, 192, 192 ) );
  IInputField = new InputField();
  cnt.add( IInputField, 0 );
  cnt.getLayout().removeLayoutComponent( IInputField );
- IInputField.setBounds( 3, 2, 547, 32 );
+ IInputField.setBounds( 3, 2, 481, 28 );
  IEnterButton = new EnterButton();
  cnt.add( IEnterButton, 0 );
  cnt.getLayout().removeLayoutComponent( IEnterButton );
- IEnterButton.setBounds( 555, 1, 80, 32 );
+ IEnterButton.setBounds( 490, 0, 80, 29 );
  IStopButton = new StopButton();
  cnt.add( IStopButton, 0 );
  cnt.getLayout().removeLayoutComponent( IStopButton );
- IStopButton.setBounds( 639, 0, 78, 34 );
+ IStopButton.setBounds( 573, 0, 78, 29 );
  IDisplay = new Display();
  cnt.add( IDisplay, 0 );
  cnt.getLayout().removeLayoutComponent( IDisplay );
- IDisplay.setBounds( 2, 37, 716, 488 );
+ IDisplay.setBounds( 1, 32, 735, 494 );
  IXEdit = new XEdit();
  cnt.add( IXEdit.scrl, 0 );
  cnt.getLayout().removeLayoutComponent( IXEdit.scrl );
- (  IXEdit.scrl ).setBounds( 2, 37, 716, 488 );
+ (  IXEdit.scrl ).setBounds( 0, 33, 744, 495 );
+ IEditButton = new EditButton();
+ cnt.add( IEditButton, 0 );
+ cnt.getLayout().removeLayoutComponent( IEditButton );
+ IEditButton.setBounds( 655, 0, 84, 29 );
  setContentPane( cnt );
  pack();
  addWindowListener( this );
@@ -4613,20 +4715,21 @@ XEdit IXEdit;
 }
 </codetext>
 </codeclip>
-<ID_maker>27</ID_maker>
-<height>202</height>
+<ID_maker>28</ID_maker>
+<height>220</height>
 <レイアウト>A51Basic
-717
-531
+743
+528
 192
 192
 192
 xxscale=1
-TEXTFIELD;InputField;null;3;2;547;32;51;51;51;255;255;255;Dialog;12;1;1;1;JTextField;
-BUTTON;EnterButton;Enter;555;1;80;32;51;51;51;192;192;192;Dialog;12;null;0;0;1;0;1;JButton;
-BUTTON;StopButton;Stop;639;0;78;34;51;51;51;192;192;192;Dialog;12;null;0;0;1;0;1;JButton;
-LABEL;Display;null;2;37;716;488;255;255;255;0;0;0;Monospaced;16;null;2;1;1;1;1;JLabel;
-TEXTAREA;XEdit;null;2;37;716;488;1;1;1;255;255;255;Dialog;12;1;1;1;JTextArea;
+TEXTFIELD;InputField;null;3;2;481;28;51;51;51;255;255;255;Dialog;12;1;1;1;JTextField;
+BUTTON;EnterButton;Enter;490;0;80;29;51;51;51;192;192;192;Dialog;12;null;0;0;1;0;1;JButton;
+BUTTON;StopButton;Stop;573;0;78;29;51;51;51;192;192;192;Dialog;12;null;0;0;1;0;1;JButton;
+LABEL;Display;null;1;32;735;494;255;255;255;0;0;0;Monospaced;16;null;2;1;1;1;1;JLabel;
+TEXTAREA;XEdit;null;0;33;744;495;1;1;1;255;255;255;Dialog;12;1;1;1;JTextArea;
+BUTTON;EditButton;Edit;655;0;84;29;51;51;51;192;192;192;Dialog;12;null;0;0;1;0;1;JButton;
 </レイアウト>
 </aobject>
 </xobject>
